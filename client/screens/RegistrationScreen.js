@@ -1,8 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import axios from "axios";
-// import { API_BASE_URL } from '@env';
-import { API_BASE_URL } from '.env';
+import { API_BASE_URL } from '@env';
 
 import {
   StyleSheet,
@@ -10,6 +9,7 @@ import {
   TextInput,
   View,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 // import CheckBox from '@react-native-community/checkbox';
 

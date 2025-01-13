@@ -1,5 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
+import axios from "axios";
+// import { API_BASE_URL } from '@env';
+import { API_BASE_URL } from '.env';
+
 import {
   StyleSheet,
   Text,
@@ -8,6 +12,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 // import CheckBox from '@react-native-community/checkbox';
+
 
 export default function RegistrationScreen() {
   // const [isChecked, setIsChecked] = useState(false);
@@ -26,7 +31,7 @@ export default function RegistrationScreen() {
     }
 
     try {
-      const response = await axios.post('http://192.168.1.110:8080/users', {
+      const response = await axios.post(`${API_BASE_URL}/users`, {
         name,
         mobile,
         email,
@@ -54,9 +59,12 @@ export default function RegistrationScreen() {
 
       {/* Input Fields */}
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="Full name" />
-        <TextInput style={styles.input} placeholder="Phone number" keyboardType="phone-pad" />
-        <TextInput style={styles.input} placeholder="Valid email" keyboardType="email-address" />
+        <TextInput style={styles.input}
+        placeholder="Name"
+        value={name}
+        onChangeText={setName} />  
+        <TextInput style={styles.input} placeholder="Phone number" value={mobile} onChangeText={setMobile} keyboardType="phone-pad" />
+        <TextInput style={styles.input} placeholder="Valid email" value={email} onChangeText={setEmail} keyboardType="email-address" />
       </View>
 
       {/* Terms and Conditions */}

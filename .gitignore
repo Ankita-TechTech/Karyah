@@ -6,3 +6,4 @@ node_modules/
 
 # npm package lock files (optional, if not shared)
 package-lock.json
+package.json

@@ -3,6 +3,7 @@ import cors from 'cors';
 import {getAllUsers, getUser, createUser} from './db.js'
 const app = express();
 const PORT = 8080;
+// const PORT = process.env.PORT;
 
 app.use(express.json())
 app.use(cors());
